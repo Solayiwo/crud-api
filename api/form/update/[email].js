@@ -1,4 +1,4 @@
-const pool = require("../../config/db");
+const pool = require("../../../config/db");
 
 module.exports = async (req, res) => {
   if (req.method !== "PUT") {
