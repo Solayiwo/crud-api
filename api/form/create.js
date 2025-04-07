@@ -18,7 +18,7 @@ async function createformdbTable() {
   }
 }
 
-module.exports.createForm = async (req, res) => {
+module.exports = async (req, res) => {
   try {
     await createformdbTable(); // Ensure the table exists
 
