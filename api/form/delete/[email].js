@@ -1,10 +1,10 @@
-const pool = require("../../config/db");
+const pool = require("../../../config/db");
 
 module.exports = async (req, res) => {
   if (req.method !== "DELETE") {
     return res.status(405).json({ error: "Method not allowed" });
   }
-  const { email } = req.params;
+  const { email } = req.query;
   console.log("Deleted email:", email);
   try {
     const result = await pool.query(
