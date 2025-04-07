@@ -5,7 +5,7 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { email } = req.params;
+  const { email } = req.query; // This works in Vercel when using dynamic routing
   const { updateAddress } = req.body;
 
   if (!updateAddress) {
