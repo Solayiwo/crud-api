@@ -5,7 +5,8 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { email } = req.body;
+  // Get the email from the dynamic parameter
+  const { email } = req.query; // This works in Vercel when using dynamic routing
   console.log("Received email:", email); // Debugging step
   try {
     const result = await pool.query(
